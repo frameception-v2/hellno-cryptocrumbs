@@ -24,15 +24,15 @@ import { PROJECT_TITLE } from "~/lib/constants";
 
 function ExampleCard() {
   return (
-    <Card>
+    <Card className="bg-purple-950 border-purple-900">
       <CardHeader>
-        <CardTitle>Welcome to the Frame Template</CardTitle>
-        <CardDescription>
-          This is an example card that you can customize or remove
+        <CardTitle className="text-purple-400">Welcome to the Purple Frame Template</CardTitle>
+        <CardDescription className="text-purple-300">
+          A beautifully crafted purple-themed frame template
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Label>Place content in a Card here.</Label>
+        <Label className="text-purple-100">Add your purple-themed content here</Label>
       </CardContent>
     </Card>
   );
