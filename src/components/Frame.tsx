@@ -38,29 +38,49 @@ function ExampleCard() {
       <CardContent className="space-y-4">
         <button 
           onClick={() => {
+            // Main explosion
             confetti({
-              particleCount: 100,
-              spread: 70,
+              particleCount: 150,
+              spread: 360,
+              scalar: 1.5,
               origin: { y: 0.6 },
-              colors: ['#FF0000', '#FF4500', '#FFA500'],
+              particleOptions: {
+                emoji: ['🔥','💥'],
+                emojiSize: 40,
+                spread: 360,
+              },
               angle: 90,
-              decay: 0.9
+              decay: 0.94
             });
+
+            // Left side explosion
             confetti({
-              particleCount: 50,
-              spread: 120,
+              particleCount: 75,
+              spread: 180,
+              scalar: 1.2,
               origin: { x: 0.2, y: 0.6 },
-              colors: ['#FF0000', '#FFA500'],
+              particleOptions: {
+                emoji: ['🔥','💥'],
+                emojiSize: 35,
+                spread: 180,
+              },
               angle: 60,
-              decay: 0.8
+              decay: 0.85
             });
+
+            // Right side explosion
             confetti({
-              particleCount: 50,
-              spread: 120,
+              particleCount: 75,
+              spread: 180,
+              scalar: 1.2,
               origin: { x: 0.8, y: 0.6 },
-              colors: ['#FF0000', '#FFA500'],
+              particleOptions: {
+                emoji: ['🔥','💥'],
+                emojiSize: 35,
+                spread: 180,
+              },
               angle: 120,
-              decay: 0.8
+              decay: 0.85
             });
           }}
           className="w-full py-4 bg-gradient-to-r from-red-600 to-orange-500 rounded-lg text-xl font-bold uppercase hover:from-red-700 hover:to-orange-600 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/50 active:scale-95 animate-bounce hover:animate-none"
