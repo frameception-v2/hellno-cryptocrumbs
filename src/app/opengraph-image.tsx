@@ -72,12 +72,33 @@ async function initializeFonts() {
 export default async function Image() {
   const options = await initializeFonts();
 
-  const BACKGROUND_GRADIENT_START = "#6d28d9";  // Deeper purple
-  const BACKGROUND_GRADIENT_END = "#8b5cf6";    // Lighter purple
   const BACKGROUND_GRADIENT_STYLE = {
-    backgroundImage: `linear-gradient(to bottom, ${BACKGROUND_GRADIENT_START}, ${BACKGROUND_GRADIENT_END})`,
+    backgroundImage: `
+      linear-gradient(
+        45deg,
+        #8B5CF6 0%,
+        #6D28D9 20%,
+        #4C1D95 40%,
+        #6D28D9 60%,
+        #8B5CF6 80%
+      )
+    `,
+    backgroundSize: '200% 200%',
+    animation: 'gradient 10s ease infinite',
     color: "white",
   };
+
+  // Floating particles effect
+  const particleStyles = Array.from({ length: 50 }).map((_, i) => ({
+    position: 'absolute',
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    width: `${Math.random() * 3 + 2}px`,
+    height: `${Math.random() * 3 + 2}px`,
+    borderRadius: '50%',
+    background: `rgba(255,255,255,${Math.random() * 0.3})`,
+    transform: `scale(${Math.random() * 0.5 + 0.5})`,
+  }));
 
   /*
 this Image is rendered using vercel/satori.

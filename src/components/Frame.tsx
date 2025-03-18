@@ -24,15 +24,32 @@ import { PROJECT_TITLE } from "~/lib/constants";
 
 function ExampleCard() {
   return (
-    <Card className="bg-purple-950 border-purple-900">
-      <CardHeader>
-        <CardTitle className="text-purple-400">Welcome to the Purple Frame Template</CardTitle>
-        <CardDescription className="text-purple-300">
-          A beautifully crafted purple-themed frame template
+    <Card className="bg-gradient-to-br from-purple-900 via-purple-950 to-purple-900 border-purple-800/50 shadow-lg shadow-purple-900/30 hover:shadow-purple-700/40 transition-shadow duration-300 group">
+      <CardHeader className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1),transparent)]" />
+        <CardTitle className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-100 font-bold text-2xl animate-pulse">
+          ✨ Welcome to the Frame Factory ✨
+        </CardTitle>
+        <CardDescription className="text-purple-200/90 mt-2">
+          Craft magic with our <span className="animate-gradient bg-gradient-to-r from-pink-400 to-purple-300 bg-clip-text text-transparent">vibrant</span> template
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <Label className="text-purple-100">Add your purple-themed content here</Label>
+      <CardContent className="space-y-4">
+        <div className="flex items-center gap-2 animate-bounce">
+          <SparklesIcon className="h-5 w-5 text-purple-300" />
+          <Label className="text-purple-100 font-mono text-sm">
+            Ready to create something awesome?
+          </Label>
+        </div>
+        <div className="bg-purple-900/30 p-3 rounded-lg border border-purple-800/50 backdrop-blur-sm">
+          <p className="text-xs text-purple-200/80 leading-relaxed">
+            Pro tip: Add some{" "}
+            <span className="underline decoration-purple-400 decoration-wavy">
+              ✨ sparkly interactions
+            </span>{" "}
+            to make your frame pop!
+          </p>
+        </div>
       </CardContent>
     </Card>
   );
