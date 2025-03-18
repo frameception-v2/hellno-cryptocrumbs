@@ -6,6 +6,7 @@ import sdk, {
   SignIn as SignInCore,
   type Context,
 } from "@farcaster/frame-sdk";
+import confetti from 'canvas-confetti';
 import {
   Card,
   CardHeader,
@@ -36,10 +37,35 @@ function ExampleCard() {
       </CardHeader>
       <CardContent className="space-y-4">
         <button 
-          onClick={() => console.log("HELLNO!")}
-          className="w-full py-4 bg-gradient-to-r from-red-600 to-orange-500 rounded-lg text-xl font-bold uppercase hover:from-red-700 hover:to-orange-600 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/50 active:scale-95"
+          onClick={() => {
+            confetti({
+              particleCount: 100,
+              spread: 70,
+              origin: { y: 0.6 },
+              colors: ['#FF0000', '#FF4500', '#FFA500'],
+              angle: 90,
+              decay: 0.9
+            });
+            confetti({
+              particleCount: 50,
+              spread: 120,
+              origin: { x: 0.2, y: 0.6 },
+              colors: ['#FF0000', '#FFA500'],
+              angle: 60,
+              decay: 0.8
+            });
+            confetti({
+              particleCount: 50,
+              spread: 120,
+              origin: { x: 0.8, y: 0.6 },
+              colors: ['#FF0000', '#FFA500'],
+              angle: 120,
+              decay: 0.8
+            });
+          }}
+          className="w-full py-4 bg-gradient-to-r from-red-600 to-orange-500 rounded-lg text-xl font-bold uppercase hover:from-red-700 hover:to-orange-600 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/50 active:scale-95 animate-bounce hover:animate-none"
         >
-          🔥 HELLNO! 🔥
+          💥🔥 HELLNO! 🔥💥
         </button>
         <div className="bg-red-900/30 p-3 rounded-lg border border-red-800/50 backdrop-blur-sm">
           <p className="text-xs text-orange-200/80 leading-relaxed">
