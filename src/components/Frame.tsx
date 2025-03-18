@@ -35,19 +35,18 @@ function ExampleCard() {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="flex items-center gap-2 animate-bounce">
-          <SparklesIcon className="h-5 w-5 text-purple-300" />
-          <Label className="text-purple-100 font-mono text-sm">
-            Ready to create something awesome?
-          </Label>
-        </div>
-        <div className="bg-purple-900/30 p-3 rounded-lg border border-purple-800/50 backdrop-blur-sm">
-          <p className="text-xs text-purple-200/80 leading-relaxed">
-            Pro tip: Add some{" "}
-            <span className="underline decoration-purple-400 decoration-wavy">
-              ✨ sparkly interactions
-            </span>{" "}
-            to make your frame pop!
+        <button 
+          onClick={() => console.log("HELLNO!")}
+          className="w-full py-4 bg-gradient-to-r from-red-600 to-orange-500 rounded-lg text-xl font-bold uppercase hover:from-red-700 hover:to-orange-600 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/50 active:scale-95"
+        >
+          🔥 HELLNO! 🔥
+        </button>
+        <div className="bg-red-900/30 p-3 rounded-lg border border-red-800/50 backdrop-blur-sm">
+          <p className="text-xs text-orange-200/80 leading-relaxed">
+            Warning: Pressing this button will unleash{" "}
+            <span className="underline decoration-red-400 decoration-wavy">
+              💥 unstoppable rejection energy
+            </span>
           </p>
         </div>
       </CardContent>
