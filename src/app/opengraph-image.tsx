@@ -75,12 +75,12 @@ export default async function Image() {
   const BACKGROUND_GRADIENT_STYLE = {
     backgroundImage: `
       linear-gradient(
-        45deg,
-        #8B5CF6 0%,
-        #6D28D9 20%,
-        #4C1D95 40%,
-        #6D28D9 60%,
-        #8B5CF6 80%
+        325deg,
+        #FF3B30 0%,
+        #8B5CF6 25%,
+        #6D28D9 50%,
+        #4C1D95 75%,
+        #1A1A1A 100%
       )
     `,
     backgroundSize: '200% 200%',

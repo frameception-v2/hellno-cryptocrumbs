@@ -45,7 +45,7 @@ function ExampleCard() {
               scalar: 1.5,
               origin: { y: 0.6 },
               particleOptions: {
-                emoji: ['🔥','💥'],
+                emoji: ['🔥','💥','💣','☠️','🚫','❌'],
                 emojiSize: 40,
                 spread: 360,
               },
@@ -83,7 +83,7 @@ function ExampleCard() {
               decay: 0.85
             });
           }}
-          className="w-full py-4 bg-gradient-to-r from-red-600 to-orange-500 rounded-lg text-xl font-bold uppercase hover:from-red-700 hover:to-orange-600 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/50 active:scale-95 animate-bounce hover:animate-none"
+          className="w-full py-4 bg-gradient-to-r from-red-600 to-orange-500 rounded-lg text-xl font-bold uppercase hover:from-red-700 hover:to-orange-600 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/50 active:scale-95 hover:rotate-[-1deg] transition-transform"
         >
           💥🔥 HELLNO! 🔥💥
         </button>
