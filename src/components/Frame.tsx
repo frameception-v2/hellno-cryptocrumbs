@@ -27,11 +27,11 @@ function ExampleCard() {
     <Card className="bg-gradient-to-br from-purple-900 via-purple-950 to-purple-900 border-purple-800/50 shadow-lg shadow-purple-900/30 hover:shadow-purple-700/40 transition-shadow duration-300 group">
       <CardHeader className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1),transparent)]" />
-        <CardTitle className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-purple-100 font-bold text-2xl animate-pulse">
-          ✨ Welcome to the Frame Factory ✨
+        <CardTitle className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-orange-100 font-bold text-2xl animate-pulse">
+          🙅♂️💥 HELLNO! 💥🙅♀️
         </CardTitle>
-        <CardDescription className="text-purple-200/90 mt-2">
-          Craft magic with our <span className="animate-gradient bg-gradient-to-r from-pink-400 to-purple-300 bg-clip-text text-transparent">vibrant</span> template
+        <CardDescription className="text-orange-200/90 mt-2">
+          The world's most <span className="animate-gradient bg-gradient-to-r from-red-400 to-orange-300 bg-clip-text text-transparent">satisfying</span> rejection
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
