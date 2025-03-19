@@ -76,11 +76,11 @@ export default async function Image() {
     backgroundImage: `
       linear-gradient(
         325deg,
-        #FF3B30 0%,
-        #8B5CF6 25%,
-        #6D28D9 50%,
-        #4C1D95 75%,
-        #1A1A1A 100%
+        #FF69B4 0%,
+        #EC4899 25%,
+        #D946EF 50%,
+        #8B5CF6 75%,
+        #7C3AED 100%
       )
     `,
     backgroundSize: '200% 200%',

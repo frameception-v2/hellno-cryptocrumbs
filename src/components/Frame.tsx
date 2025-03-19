@@ -25,7 +25,7 @@ import { PROJECT_TITLE } from "~/lib/constants";
 
 function ExampleCard() {
   return (
-    <Card className="bg-gradient-to-br from-purple-900 via-purple-950 to-purple-900 border-purple-800/50 shadow-lg shadow-purple-900/30 hover:shadow-purple-700/40 transition-shadow duration-300 group">
+    <Card className="bg-gradient-to-br from-pink-500 via-purple-600 to-pink-400 border-purple-400/50 shadow-lg shadow-pink-900/30 hover:shadow-purple-500/40 transition-shadow duration-300 group">
       <CardHeader className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1),transparent)]" />
         <CardTitle className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-orange-100 font-bold text-2xl animate-pulse">
@@ -85,8 +85,8 @@ function ExampleCard() {
               decay: 0.85
             });
           }}
-          className="w-full py-4 bg-gradient-to-r from-purple-600 via-red-500 to-orange-500 rounded-lg text-xl font-bold uppercase 
-            hover:from-purple-700 hover:via-red-600 hover:to-orange-600 
+          className="w-full py-4 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-400 rounded-lg text-xl font-bold uppercase 
+            hover:from-pink-600 hover:via-purple-700 hover:to-pink-500 
             transition-all duration-200 transform 
             hover:scale-[1.1] shadow-2xl shadow-purple-900/50 
             active:scale-95 hover:rotate-[1deg] 
