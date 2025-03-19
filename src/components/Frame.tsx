@@ -45,12 +45,14 @@ function ExampleCard() {
               scalar: 1.5,
               origin: { y: 0.6 },
               particleOptions: {
-                emoji: ['🔥','💥','💣','☠️','🚫','❌'],
-                emojiSize: 40,
-                spread: 360,
+                emoji: ['🔥','💥','💣','☠️','🚫','❌','👊','🤬','💀','🛑'],
+                emojiSize: 50,
+                spread: 400,
               },
               angle: 90,
-              decay: 0.94
+              decay: 0.94,
+              startVelocity: 45,
+              gravity: 0.8
             });
 
             // Left side explosion
@@ -83,17 +85,33 @@ function ExampleCard() {
               decay: 0.85
             });
           }}
-          className="w-full py-4 bg-gradient-to-r from-red-600 to-orange-500 rounded-lg text-xl font-bold uppercase hover:from-red-700 hover:to-orange-600 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-red-900/50 active:scale-95 hover:rotate-[-1deg] transition-transform"
+          className="w-full py-4 bg-gradient-to-r from-purple-600 via-red-500 to-orange-500 rounded-lg text-xl font-bold uppercase 
+            hover:from-purple-700 hover:via-red-600 hover:to-orange-600 
+            transition-all duration-200 transform 
+            hover:scale-[1.1] shadow-2xl shadow-purple-900/50 
+            active:scale-95 hover:rotate-[1deg] 
+            animate-pulse hover:animate-none
+            border-2 border-white/20"
+            style={{
+              backgroundSize: '200% 200%',
+              animation: 'gradient-wave 3s ease infinite',
+            }}
         >
           💥🔥 HELLNO! 🔥💥
         </button>
         <div className="bg-red-900/30 p-3 rounded-lg border border-red-800/50 backdrop-blur-sm">
-          <p className="text-xs text-orange-200/80 leading-relaxed">
-            Warning: Pressing this button will unleash{" "}
-            <span className="underline decoration-red-400 decoration-wavy">
-              💥 unstoppable rejection energy
-            </span>
+          <p className="text-xs text-orange-200/80 leading-relaxed font-medium">
+            ⚠️ WARNING: This button unleashes{" "}
+            <span className="bg-gradient-to-r from-red-400 to-orange-300 bg-clip-text text-transparent font-bold animate-text-shake">
+              UNCONTROLLABLE CHAOS
+            </span>{" "}
+            with{" "}
+            <span className="underline decoration-red-400 decoration-double">
+              IRREVERSIBLE
+            </span>{" "}
+            consequences. Proceed at own risk 🔥
           </p>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,100,0.15),transparent)] animate-pulse" />
         </div>
       </CardContent>
     </Card>
