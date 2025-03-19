@@ -25,7 +25,7 @@ import { PROJECT_TITLE } from "~/lib/constants";
 
 function ExampleCard() {
   return (
-    <Card className="bg-gradient-to-br from-pink-500 via-purple-600 to-pink-400 border-purple-400/50 shadow-lg shadow-pink-900/30 hover:shadow-purple-500/40 transition-shadow duration-300 group">
+    <Card className="w-full h-full bg-gradient-to-br from-pink-500 via-purple-600 to-pink-400 border-purple-400/50 shadow-lg shadow-pink-900/30 hover:shadow-purple-500/40 transition-shadow duration-300 group flex flex-col justify-between">
       <CardHeader className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1),transparent)]" />
         <CardTitle className="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-orange-100 font-bold text-2xl animate-pulse">
@@ -85,7 +85,7 @@ function ExampleCard() {
               decay: 0.85
             });
           }}
-          className="w-full py-4 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-400 rounded-lg text-xl font-bold uppercase 
+          className="w-full py-4 md:py-6 bg-gradient-to-r from-pink-500 via-purple-600 to-pink-400 rounded-lg text-xl md:text-3xl font-bold uppercase 
             hover:from-pink-600 hover:via-purple-700 hover:to-pink-500 
             transition-all duration-200 transform 
             hover:scale-[1.1] shadow-2xl shadow-purple-900/50 
@@ -215,10 +215,10 @@ export default function Frame() {
         paddingLeft: context?.client.safeAreaInsets?.left ?? 0,
         paddingRight: context?.client.safeAreaInsets?.right ?? 0,
       }}
+      className="min-h-screen"
     >
-      <div className="w-[300px] mx-auto py-2 px-2">
+      <div className="w-full max-w-4xl px-4 py-2 mx-auto h-full">
         <ExampleCard />
-      </div>
     </div>
   );
 }
