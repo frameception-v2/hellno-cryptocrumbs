@@ -12,8 +12,11 @@ const imageOptions = {
     {
       name: 'Inter',
       data: await fetch(
-        new URL('https://fonts.gstatic.com/s/inter/v13/7cHrv4kjgoGqM7E3m-ks6FIPqL8.woff2')
-      ).then((res) => res.arrayBuffer()),
+        new URL('https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2')
+      ).then((res) => {
+        if (!res.ok) throw new Error('Failed to load font');
+        return res.arrayBuffer();
+      }),
       weight: 400 as const,
       style: 'normal' as const,
     },
