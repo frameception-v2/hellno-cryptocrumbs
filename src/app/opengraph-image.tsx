@@ -12,8 +12,10 @@ const imageOptions = {
     {
       name: 'Inter',
       data: await fetch(
-        new URL('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap')
+        new URL('https://fonts.gstatic.com/s/inter/v13/7cHrv4kjgoGqM7E3m-ks6FIPqL8.woff2')
       ).then((res) => res.arrayBuffer()),
+      weight: 400,
+      style: 'normal',
     },
   ],
 };
