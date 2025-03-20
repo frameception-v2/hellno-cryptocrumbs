@@ -16,14 +16,38 @@ export default async function Image() {
           overflow: 'hidden'
         }}
       >
-        <div tw="text-8xl font-bold mb-4 bg-clip-text text-transparent" style={{ 
+        {/* 3D Text with Holographic Effect */}
+        <div tw="text-8xl font-bold mb-4" style={{ 
+          transform: 'rotate3d(1, 2, 1, 15deg)',
+          color: 'transparent',
           backgroundImage: BRAND_COLORS.gradient,
-          textShadow: `0 0 40px ${BRAND_COLORS.primary}`
+          backgroundClip: 'text',
+          textShadow: `
+            0 0 40px ${BRAND_COLORS.primary},
+            0 0 80px ${BRAND_COLORS.secondary},
+            0 0 100px ${BRAND_COLORS.accent}
+          `,
+          filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.5))',
+          animation: 'pulse 3s ease-in-out infinite'
         }}>{PROJECT_TITLE}</div>
-        <div tw="text-4xl font-bold" style={{ 
+        {/* Cyberpunk-style Description with Motion Trail */}
+        <div tw="text-4xl font-bold relative" style={{ 
           color: BRAND_COLORS.accent,
-          textShadow: `0 0 30px ${BRAND_COLORS.accent}`
-        }}>{PROJECT_DESCRIPTION}</div>
+          textShadow: `
+            0 0 30px ${BRAND_COLORS.accent},
+            0 0 60px ${BRAND_COLORS.accent},
+            0 0 90px ${BRAND_COLORS.accent}
+          `,
+          transform: 'skew(-15deg) rotate(-2deg)',
+          filter: 'drop-shadow(0 0 10px rgba(255,215,0,0.8))',
+          animation: 'scanline 4s linear infinite'
+        }}>
+          <div tw="absolute inset-0 bg-current mix-blend-overlay opacity-20" style={{
+            clipPath: 'polygon(0 0, 100% 0, 100% 30%, 0 70%)',
+            animation: 'glitch 2s infinite linear'
+          }}></div>
+          {PROJECT_DESCRIPTION}
+        </div>
         
         {/* Animated background elements */}
         <div tw="absolute inset-0 flex items-center justify-center">
