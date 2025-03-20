@@ -12,8 +12,8 @@ export function Frame({ children, title = PROJECT_TITLE }: FrameProps) {
       className="relative rounded-xl overflow-visible border-2 animate-pulse"
       style={{ 
         borderColor: BRAND_COLORS.primary,
-        background: `linear-gradient(160deg, ${BRAND_COLORS.background} 30%, #1A0F24 100%)`,
-        boxShadow: `0 0 40px ${BRAND_COLORS.accent}40`
+        background: `linear-gradient(160deg, ${BRAND_COLORS.primary}20 0%, ${BRAND_COLORS.secondary}20 50%, ${BRAND_COLORS.accent}20 100%)`,
+        boxShadow: `0 0 60px ${BRAND_COLORS.accent}80`
       }}
     >
       <div 

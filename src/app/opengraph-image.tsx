@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { PROJECT_TITLE, PROJECT_DESCRIPTION } from "~/lib/constants";
+import { PROJECT_TITLE, PROJECT_DESCRIPTION, BRAND_COLORS } from "~/lib/constants";
 
 export const alt = PROJECT_TITLE;
 export const contentType = "image/png";
@@ -11,7 +11,7 @@ export default async function Image() {
         tw="h-full w-full flex flex-col items-center justify-center bg-black text-white"
         style={{
           fontFamily: 'sans-serif',
-          background: 'radial-gradient(circle at 50% 100%, #0A0A0A 0%, #000 100%)',
+          background: `radial-gradient(circle at 50% 100%, ${BRAND_COLORS.primary} 0%, ${BRAND_COLORS.background} 100%)`,
           position: 'relative',
           overflow: 'hidden'
         }}
@@ -20,9 +20,9 @@ export default async function Image() {
           backgroundImage: BRAND_COLORS.gradient,
           textShadow: `0 0 40px ${BRAND_COLORS.primary}`
         }}>{PROJECT_TITLE}</div>
-        <div tw="text-3xl" style={{ 
-          color: BRAND_COLORS.secondary,
-          textShadow: `0 0 20px ${BRAND_COLORS.secondary}`
+        <div tw="text-4xl font-bold" style={{ 
+          color: BRAND_COLORS.accent,
+          textShadow: `0 0 30px ${BRAND_COLORS.accent}`
         }}>{PROJECT_DESCRIPTION}</div>
         
         {/* Animated background elements */}
