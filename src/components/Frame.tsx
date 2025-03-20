@@ -6,7 +6,7 @@ interface FrameProps {
   title?: string;
 }
 
-export default function Frame({ children, title = PROJECT_TITLE }: FrameProps) {
+export function Frame({ children, title = PROJECT_TITLE }: FrameProps) {
   return (
     <div 
       className="relative rounded-xl overflow-hidden border-2"
