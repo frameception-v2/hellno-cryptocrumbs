@@ -14,8 +14,8 @@ const imageOptions = {
       data: await fetch(
         new URL('https://fonts.gstatic.com/s/inter/v13/7cHrv4kjgoGqM7E3m-ks6FIPqL8.woff2')
       ).then((res) => res.arrayBuffer()),
-      weight: 400,
-      style: 'normal',
+      weight: 400 as const,
+      style: 'normal' as const,
     },
   ],
 };
