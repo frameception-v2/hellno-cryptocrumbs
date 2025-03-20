@@ -6,71 +6,14 @@ import { join } from "path";
 export const alt = PROJECT_TITLE;
 export const contentType = "image/png";
 
-// Function to load font with error handling
-async function loadFont(fontPath: string): Promise<Buffer> {
-  try {
-    const fontData = readFileSync(fontPath);
-    return fontData;
-  } catch (error) {
-    // Fallback to loading from absolute path
-    try {
-      const absolutePath = join(
-        __dirname,
-        "..",
-        "..",
-        "public",
-        "fonts",
-        fontPath.split("/").pop()!
-      );
-      return readFileSync(absolutePath);
-    } catch (fallbackError) {
-      throw new Error(`Failed to load font ${fontPath}: ${error}`);
-    }
-  }
-}
-
-// Create reusable options object
-let imageOptions: any = null;
-
-// Initialize fonts
-async function initializeFonts() {
-  if (imageOptions) return imageOptions;
-
-  try {
-    const regularFont = await loadFont(
-      join(process.cwd(), "public/fonts/Nunito-Regular.ttf")
-    );
-    const semiBoldFont = await loadFont(
-      join(process.cwd(), "public/fonts/Nunito-SemiBold.ttf")
-    );
-
-    imageOptions = {
-      width: 1200,
-      height: 800,
-      fonts: [
-        {
-          name: "Nunito",
-          data: regularFont,
-          weight: 400,
-          style: "normal",
-        },
-        {
-          name: "Nunito",
-          data: semiBoldFont,
-          weight: 600,
-          style: "normal",
-        },
-      ],
-    };
-
-    return imageOptions;
-  } catch (error) {
-    throw error;
-  }
-}
+// Create options object with default system fonts
+const imageOptions = {
+  width: 1200,
+  height: 800,
+};
 
 export default async function Image() {
-  const options = await initializeFonts();
+  const options = imageOptions;
 
   const BACKGROUND_GRADIENT_STYLE = {
     backgroundImage: `
@@ -88,17 +31,6 @@ export default async function Image() {
     color: "white",
   };
 
-  // Floating particles effect
-  const particleStyles = Array.from({ length: 50 }).map((_, i) => ({
-    position: 'absolute',
-    left: `${Math.random() * 100}%`,
-    top: `${Math.random() * 100}%`,
-    width: `${Math.random() * 3 + 2}px`,
-    height: `${Math.random() * 3 + 2}px`,
-    borderRadius: '50%',
-    background: `rgba(255,255,255,${Math.random() * 0.3})`,
-    transform: `scale(${Math.random() * 0.5 + 0.5})`,
-  }));
 
   /*
 this Image is rendered using vercel/satori.
@@ -115,7 +47,7 @@ Please refer to Satori’s documentation for a list of supported HTML and CSS fe
         style={BACKGROUND_GRADIENT_STYLE}
       >
         <h1 tw="text-9xl text-center font-semibold">HELLNO! 🙅♂️💥</h1>
-        <h3 tw="text-4xl font-normal">The world&apos;s most satisfying rejection</h3>
+        <h3 tw="text-4xl font-normal">The world's most satisfying rejection</h3>
       </div>
     ),
     options
