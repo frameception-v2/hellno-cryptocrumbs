@@ -24,8 +24,6 @@ export default async function Image() {
         #7C3AED 100%
       )
     `,
-    backgroundSize: '200% 200%',
-    animation: 'gradient 10s ease infinite',
     color: "white",
   };
 
@@ -42,7 +40,10 @@ Please refer to Satori’s documentation for a list of supported HTML and CSS fe
     (
       <div
         tw="h-full w-full flex flex-col justify-center items-center relative"
-        style={BACKGROUND_GRADIENT_STYLE}
+        style={{ 
+          background: 'linear-gradient(325deg, #FF69B4 0%, #EC4899 25%, #D946EF 50%, #8B5CF6 75%, #7C3AED 100%)',
+          color: 'white'
+        }}
       >
         <h1 tw="text-9xl text-center font-semibold">{PROJECT_TITLE}</h1>
         <h3 tw="text-4xl font-normal">{PROJECT_DESCRIPTION}</h3>
