@@ -115,7 +115,7 @@ Please refer to Satori’s documentation for a list of supported HTML and CSS fe
         style={BACKGROUND_GRADIENT_STYLE}
       >
         <h1 tw="text-9xl text-center font-semibold">HELLNO! 🙅♂️💥</h1>
-        <h3 tw="text-4xl font-normal">The world's most satisfying rejection</h3>
+        <h3 tw="text-4xl font-normal">The world&apos;s most satisfying rejection</h3>
       </div>
     ),
     options
