@@ -1,4 +1,4 @@
-export const PROJECT_ID = 'farcaster-frames-template';
+export const PROJECT_ID = 'hellno';
 export const PROJECT_TITLE = "HELLNO! 🙅♂️💥🙅♀️";
 export const BRAND_COLORS = {
   primary: "#8B5CF6",

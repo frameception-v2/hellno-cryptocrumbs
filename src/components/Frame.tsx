@@ -9,7 +9,7 @@ interface FrameProps {
 export function Frame({ children, title = PROJECT_TITLE }: FrameProps) {
   return (
     <div 
-      className="relative rounded-xl overflow-hidden border-2"
+      className="relative rounded-xl overflow-visible border-2"
       style={{ borderColor: BRAND_COLORS.primary }}
     >
       <div 

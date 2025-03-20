@@ -8,11 +8,17 @@ export const contentType = "image/png";
 const imageOptions = {
   width: 1200,
   height: 800,
+  fonts: [
+    {
+      name: 'Inter',
+      data: await fetch(
+        new URL('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap')
+      ).then((res) => res.arrayBuffer()),
+    },
+  ],
 };
 
 export default async function Image() {
-  const options = imageOptions;
-
 
   /*
 this Image is rendered using vercel/satori.
@@ -27,7 +33,7 @@ Please refer to Satori’s documentation for a list of supported HTML and CSS fe
       <div
         tw="h-full w-full flex flex-col justify-center items-center relative"
         style={{ 
-          background: 'linear-gradient(325deg, #FF69B4 0%, #EC4899 25%, #D946EF 50%, #8B5CF6 75%, #7C3AED 100%)',
+          background: 'linear-gradient(325deg, #FF69B4, #EC4899 25%, #D946EF 50%, #8B5CF6 75%, #7C3AED)',
           color: 'white'
         }}
       >
