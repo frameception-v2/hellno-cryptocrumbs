@@ -1,4 +1,4 @@
-import { ImageResponse } from "next/og";
+import { ImageResponse } from "next/server";
 import { PROJECT_TITLE, PROJECT_DESCRIPTION } from "~/lib/constants";
 
 export const alt = PROJECT_TITLE;
@@ -12,20 +12,6 @@ const imageOptions = {
 
 export default async function Image() {
   const options = imageOptions;
-
-  const BACKGROUND_GRADIENT_STYLE = {
-    backgroundImage: `
-      linear-gradient(
-        325deg,
-        #FF69B4 0%,
-        #EC4899 25%,
-        #D946EF 50%,
-        #8B5CF6 75%,
-        #7C3AED 100%
-      )
-    `,
-    color: "white",
-  };
 
 
   /*
@@ -49,6 +35,6 @@ Please refer to Satori’s documentation for a list of supported HTML and CSS fe
         <h3 tw="text-4xl font-normal">{PROJECT_DESCRIPTION}</h3>
       </div>
     ),
-    options
+    imageOptions
   );
 }
