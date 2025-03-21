@@ -58,21 +58,44 @@ export default async function Image() {
           </div>
         </div>
         
-        {/* Whimsical Floating Elements */}
-        <div tw="absolute inset-0 flex items-center justify-center">
-          {[...Array(30)].map((_, i) => (
-            <div key={i} tw="absolute" style={{
+        {/* Dynamic Floating Elements */}
+        <div style={{ 
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden'
+        }}>
+          {[...Array(120)].map((_, i) => (
+            <div key={i} style={{
+              position: 'absolute',
               width: `${Math.random() * 40 + 20}px`,
               height: `${Math.random() * 40 + 20}px`,
               background: `radial-gradient(circle, ${BRAND_COLORS.secondary} 0%, ${BRAND_COLORS.primary} 100%)`,
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              opacity: 0.2,
+              opacity: Math.random() * 0.3 + 0.1,
               borderRadius: Math.random() > 0.5 ? '50%' : '30%',
-              transform: `scale(${Math.random() * 0.5 + 0.5}) rotate(${Math.random() * 360}deg)`
+              transform: `scale(${Math.random() * 0.5 + 0.5}) rotate(${Math.random() * 360}deg)`,
+              animation: `float ${Math.random() * 10 + 5}s infinite ${Math.random() * 2}s`,
+              filter: `blur(${Math.random() * 4}px)`
             }} />
           ))}
-          <div tw="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 mix-blend-overlay" />
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: `linear-gradient(to bottom, transparent 0%, ${BRAND_COLORS.background}80 100%)`,
+            mixBlendMode: 'overlay'
+          }} />
+          {/* Animated Glow Border */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            borderRadius: '40px',
+            boxShadow: `inset 0 0 80px ${BRAND_COLORS.accent}80`,
+            animation: 'pulse-glow 6s ease-in-out infinite'
+          }} />
         </div>
       </div>
     ),
