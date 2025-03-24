@@ -8,18 +8,26 @@ export default async function Image() {
   return new ImageResponse(
     (
       <div
-        tw="h-full w-full flex flex-col items-center justify-center bg-black text-white"
+        tw="h-full w-full bg-black text-white"
         style={{
           fontFamily: 'sans-serif',
           background: `radial-gradient(circle at 50% 100%, ${BRAND_COLORS.primary} 0%, ${BRAND_COLORS.background} 100%)`,
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
       >
         {/* Cute Floating Title */}
-        <div tw="flex items-center" style={{
+        <div style={{
           transform: 'rotate(-2deg)',
-          filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.5))'
+          filter: 'drop-shadow(0 0 20px rgba(255,255,255,0.5))',
+          display: 'flex',
+          alignItems: 'center',
+          position: 'relative',
+          zIndex: 1
         }}>
           <div tw="text-8xl font-bold mr-4" style={{ 
             color: 'transparent',
@@ -32,11 +40,28 @@ export default async function Image() {
             `,
             position: 'relative',
             top: '-10px'
-          }}>🌟 {PROJECT_TITLE} 🌈</div>
+          }}>
+          <div style={{
+            position: 'absolute',
+            width: '150%',
+            height: '150%',
+            background: BRAND_COLORS.gradient,
+            mixBlendMode: 'hard-light',
+            opacity: 0.3,
+            filter: 'blur(60px)'
+          }}></div>
+          🔥🚫 {PROJECT_TITLE} 🚫🔥
+          </div>
         </div>
-        {/* Playful Description with Emoji */}
-        <div tw="flex flex-col items-center mt-8" style={{
-          transform: 'rotate(3deg)'
+        {/* Cyberpunk Description */}
+        <div style={{
+          transform: 'rotate(3deg) skewX(-5deg)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: '2rem',
+          position: 'relative',
+          zIndex: 1
         }}>
           <div tw="text-4xl font-bold mb-4" style={{ 
             color: BRAND_COLORS.secondary,
@@ -48,13 +73,29 @@ export default async function Image() {
             borderRadius: '999px',
             border: `3px solid ${BRAND_COLORS.accent}`
           }}>🚫 No Way! 💥</div>
-          <div tw="text-3xl font-semibold flex items-center" style={{
+          <div style={{
             color: BRAND_COLORS.primary,
-            textShadow: `0 0 20px ${BRAND_COLORS.secondary}`
+            textShadow: `0 0 20px ${BRAND_COLORS.secondary}`,
+            fontSize: '2.5rem',
+            fontWeight: 700,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem',
+            padding: '1rem 2rem',
+            border: `3px solid ${BRAND_COLORS.accent}`,
+            background: 'linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(20,20,20,0.8) 100%)',
+            borderRadius: '16px',
+            position: 'relative',
+            overflow: 'hidden'
           }}>
-            <span tw="mr-4">🎀</span>
-            {PROJECT_DESCRIPTION}
-            <span tw="ml-4">✨</span>
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              background: `linear-gradient(45deg, ${BRAND_COLORS.primary} 0%, ${BRAND_COLORS.secondary} 100%)`,
+              opacity: 0.2,
+              mixBlendMode: 'overlay'
+            }}></div>
+            ⚡🛑 {PROJECT_DESCRIPTION} 🛑⚡
           </div>
         </div>
         
